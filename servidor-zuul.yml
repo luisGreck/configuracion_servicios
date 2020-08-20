@@ -1,0 +1,21 @@
+server: 
+  port: 7000
+  
+zuul:  
+  routes:
+    ms-vuelos:          #servicio creado nombre
+      path: /svuelos/** #path a interceptar
+      serviceId: servicio-vuelos 
+       #url: http://localhost:9000
+    ms-hoteles:
+      path: /shoteles/**  
+      serviceId: servicio-hoteles
+    ms-reservas:
+      path: /sreservas/**  
+      serviceId: servicio-reservas
+
+eureka: 
+  client: 
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+        
